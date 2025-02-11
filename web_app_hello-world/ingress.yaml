@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: webapp.apps.ridethenet.be
+  - host: webapp-1.apps.ridethenet.be
     http:
       paths:
       - path: /
