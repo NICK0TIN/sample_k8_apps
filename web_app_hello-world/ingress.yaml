@@ -3,8 +3,13 @@ kind: Ingress
 metadata:
   name: web-app
   annotations:
-    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "ca-issuer-ridethenet"
 spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - webapp-1.apps.ridethenet.be
+    secretName: tls-cert-from-certman
   rules:
   - host: webapp-1.apps.ridethenet.be
     http:
